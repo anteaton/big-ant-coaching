@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1:1 Online Coaching | Big Ant</title>
+    <style>
+        :root {
+            --bg-color: #0f0f11;
+            --card-bg: #18181c;
+            --accent: #ff3b30;
+            --text-main: #ffffff;
+            --text-sub: #a1a1aa;
+            --border-color: #27272a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(255, 59, 48, 0.15);
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 6px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        p.hero-text {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        form {
+            background-color: var(--card-bg);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label.question {
+            display: block;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--bg-color);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .option-label:hover {
+            border-color: var(--accent);
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            accent-color: var(--accent);
+            width: 16px;
+            height: 16px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--accent);
+            color: #ffffff;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            opacity: 0.9;
+        }
+
+        .error {
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="tag">1:1 Online Coaching</span>
+        <h1>Big Ant Coaching</h1>
+        <p class="hero-text">Get the exact high-volume hypertrophy and strength principles I use to build a dense, elite physique, tailored directly to your goals.</p>
+    </header>
+
+    <form id="coachingForm" action="https://formspree.io/f/xnpqdaej" method="POST">
+        
+        <div class="form-group">
+            <label class="question" for="name">1. Full Name</label>
+            <input type="text" id="name" name="full_name" placeholder="John Doe" required>
+            <div class="error" id="nameError">Please enter your full name</div>
+        </div>
+
+        <div class="form-group">
+            <label class="question" for="email">2. Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            <div class="error" id="emailError">Please enter a valid email address</div>
+        </div>
+
+        <div class="form-group">
+            <label class="question" for="phone">3. Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
+            <div class="error" id="phoneError">Please enter your phone number</div>
+        </div>
+
+        <div class="form-group">
+            <label class="question">4. What is your primary fitness goal right now?</label>
+            <div class="option-group">
+                <label class="option-label">
+                    <input type="checkbox" name="goal" value="Building raw size / mass">
+                    Building raw size / mass (Hypertrophy)
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" name="goal" value="Getting lean / dropping body fat">
+                    Getting lean / dropping body fat
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" name="goal" value="Increasing strength on heavy compound lifts">
+                    Increasing strength on heavy compound lifts (Bench, Squat, etc.)
+                </label>
+                <label class="option-label">
+                    <input type="checkbox" name="goal" value="General physique aesthetic / V-taper development">
+                    General physique aesthetic / V-taper development
+                </label>
+            </div>
+            <div class="error" id="goalError">Please select at least one goal</div>
+        </div>
+
+        <div class="form-group">
+            <label class="question">5. How many years/months have you been seriously training?</label>
+            <div class="option-group">
+                <label class="option-label">
+                    <input type="radio" name="experience" value="0–1 year" required>
+                    0–1 year (Beginner)
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="experience" value="1–3 years">
+                    1–3 years (Intermediate)
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="experience" value="3+ years">
+                    3+ years (Advanced)
+                </label>
+            </div>
+            <div class="error" id="experienceError">Please select your training experience</div>
+        </div>
+
+        <div class="form-group">
+            <label class="question" for="split">6. What does your current training split look like?</label>
+            <input type="text" id="split" name="training_split" placeholder="e.g., Push/Pull/Legs, Upper/Lower" required>
+            <div class="error" id="splitError">Please enter your training split</div>
+        </div>
+
+        <div class="form-group">
+            <label class="question" for="roadblock">7. What is your biggest roadblock right now?</label>
+            <textarea id="roadblock" name="roadblock" rows="4" placeholder="Nutrition, consistency, plateauing, programming, etc." required></textarea>
+            <div class="error" id="roadblockError">Please describe your biggest roadblock</div>
+        </div>
+
+        <div class="form-group">
+            <label class="question">8. Are you ready to invest in yourself and commit to a monthly coaching program to secure your goals?</label>
+            <div class="option-group">
+                <label class="option-label">
+                    <input type="radio" name="ready_to_invest" value="Yes" required>
+                    Yes
+                </label>
+                <label class="option-label">
+                    <input type="radio" name="ready_to_invest" value="No">
+                    No
+                </label>
+            </div>
+            <div class="error" id="investError">Please select an option</div>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Application</button>
+    </form>
+</div>
+
+<script src="form-handler.js"></script>
+
+</body>
+</html>
